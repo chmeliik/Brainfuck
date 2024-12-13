@@ -20,7 +20,7 @@ data Instruction
 
 parse :: String -> Maybe [Instruction]
 parse s = do
-    let (instrs, s') = runParser (instrStar <* skipUnknown) s
+    let (instrs, s') = runParser instrStar s
     guard (null s')
     instrs
 
